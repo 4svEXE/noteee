@@ -1,0 +1,26 @@
+<script src="../fly_button/js/airplanButton.js" async></script>
+<link href="../fly_button/css/airplanButton.css" rel="stylesheet" type="text/css"/>
+
+<div class="sv-flex sv-col">
+  <p>Скопіювати ключ ноти сюди: </p>
+  <form class="input-form sv-flex sv-col" action="/note/" method="post">
+        <textarea class="custom-textarea" name="id" rows="1" placeholder="ключ"></textarea>
+
+        <div class="airplan_button">
+          <div class="airplan_loader_box">
+        		<div class="loader_container">
+        			<div class="airplan_loader_item"></div>
+        			<div class="airplan_loader_item"></div>
+        			<div class="airplan_loader_item"></div>
+        			<div class="airplan_loader_item"></div>
+        		</div>
+        	</div>
+        	<div class="body_plane">
+        		<img src="../fly_button/img/airplan/airplan.svg" class="airplan">
+        	</div>
+
+          <input class="airplan_button_body" type="submit" value="подивитись ноту">
+        </div>
+
+  </form>
+</div>

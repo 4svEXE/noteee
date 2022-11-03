@@ -1,0 +1,25 @@
+<nav class="header sv-flex">
+  {{#if isIndex}}
+  <li class="active"><a href="/">ВІДКРИТИ</a></li>
+  {{else}}
+  <li class=""><a href="/">ВІДКРИТИ</a></li>
+  {{/if}}
+
+  <a href="/" class="brand-logo" tooltip="Створюй приватні повідомлення">
+    NOTEEE
+  </a>
+
+  <div class="dropdown">
+
+    {{#if isCreate}}
+      <button class="dropbtn active">СТВОРИТИ</button>
+    {{else}}
+      <li><a href="">СТВОРИТИ</a></li>
+    {{/if}}
+
+    <div class="dropdown-content">
+      <a href="/note/create">приватну ноту</a>
+      <a href="/tgNote/create">нагадайку в телеграм</a>
+    </div>
+  </div>
+</nav>

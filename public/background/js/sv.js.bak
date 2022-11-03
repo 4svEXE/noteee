@@ -1,0 +1,27 @@
+const qs = el => document.querySelector(el)
+const qsa = el => document.querySelectorAll(el)
+const random = (min, max) => Math.floor(min + Math.random() * (max + 1 - min))
+
+function randBool() {
+  if (random(0,1) == 1) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+qs('body').insertAdjacentHTML('beforeend', `<div class="scripts"></div>`)
+const require = src =>{
+	const sript = document.createElement('script')
+	sript.src = src
+	sript.async = true
+	qs('.scripts').appendChild(sript)
+}
+
+require('js/cofings.js')
+require('js/frames.js')
+require('js/ballMovement.js')
+require('js/ball.js')
+require('js/canvas.js')
+require('js/cursor.js')
+require('js/main.js')

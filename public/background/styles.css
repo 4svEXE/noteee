@@ -1,0 +1,38 @@
+*{
+	box-sizing: border-box;
+	outline: none; border: none;
+	text-decoration: none;
+}
+body{
+	margin: 0;
+	font-family: Arial, cursive;
+	overflow: hidden;
+}
+.wrapper{
+	width: 100%;
+	min-height: 100vh;
+	background-color: #aaa;
+}
+
+/*   mini bootstrap   */
+.flex{
+	display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.col{
+  display: flex;
+  flex-direction: column
+}
+/*   mini bootstrap   */
+
+#play_Game{
+	position: absolute;
+	top: 50px;left: 50px;
+	padding: 10px;
+	cursor: pointer;
+	opacity: .5;
+}
