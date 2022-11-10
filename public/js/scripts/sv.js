@@ -3,13 +3,7 @@ const qsa = el => document.querySelectorAll(el);
 
 const rand = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
 
-const randBool = () => {
-	if (random(0, 1) === 1) {
-		return true;
-	} else {
-		return false;
-	}
-}
+const randBool = () => !!(rand(0, 1));
 
 function dbToggle (element, className, duration = 500) {
 	qs(element).classList.toggle(className);
@@ -24,6 +18,4 @@ const addScript = src => {
 	sript.async = true;
 	qs('.scripts').appendChild(sript);
 };
-addScript('./js/includes.js');
-
-console.log('sv is working!');
+addScript('../js/includes.js');

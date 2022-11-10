@@ -25,4 +25,4 @@ const schema = new Schema({
   }
 });
 
-module.exports = model('tgNote', schema);
+module.exports = model('tgNoteDumpster', schema);

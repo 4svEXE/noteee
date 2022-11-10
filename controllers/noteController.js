@@ -2,12 +2,12 @@ const Note = require('../models/Note');
 
 exports.showNote = async function(req, res) {
   const id = req.params.id;
-  let note = await Note.find({'_id': id});
+  let note = await Note.findOne({'_id': id});
 
   if ( note) {
     res.render('note', {
-      title: note[0].title,
-      note:  note[0].title,
+      title: note.title,
+      note:  note.title,
       isIndex: true,
     });
 
@@ -15,8 +15,8 @@ exports.showNote = async function(req, res) {
 
   } else {
     res.render('note', {
-      title: 'ноти не існує!(',
-      note:  'ноти не існує!(',
+      title: 'Ноти не існує!(',
+      note:  'Ноти не існує!(',
       isIndex: true,
     });
   }

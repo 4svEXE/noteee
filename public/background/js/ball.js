@@ -1,4 +1,4 @@
-const letters = 'QWERTYUIOPLKJHGFDSAZXCVBNM'
+let letters = 'QWERTYUIOPLKJHGFDSAZXCVBNM'
 let letterArr = []
 for (var letter of letters) {
   letterArr.push(letter);
@@ -21,7 +21,6 @@ class Ball {
   get top() {
     return Math.floor(this.y + this.size/2)
   }
-
   get bot() {
     return Math.floor(this.y - this.size/2)
   }

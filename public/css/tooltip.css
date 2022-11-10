@@ -1,4 +1,5 @@
-[tooltip] {
+[tooltip],
+[tooltip-top] {
   position: relative;
 }
 [tooltip]::after {
@@ -11,7 +12,24 @@
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   pointer-events: none;
   opacity: 0;transition: .3s;
+  z-index: 11;
 }
 [tooltip]:hover::after {
   opacity: 1;transform: translateY(70%);
+}
+
+[tooltip-top]::after {
+  content: attr(tooltip-top);
+  position: absolute;width: auto;
+  font-size: 14px;
+  left: 0; top: 0;
+  background: #373737;color: #fff;
+  padding: 0.5em;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  opacity: 0;transition: .3s;
+  z-index: 11;
+}
+[tooltip-top]:hover::after {
+  opacity: 1;transform: translateY(-100%);
 }

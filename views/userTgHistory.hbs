@@ -1,0 +1,47 @@
+<div class="note">
+  {{#if isHistory}}
+    <span>
+      <a href="/tgNote/userTgNotes/{{chatId}}">
+        Список твоїх нагадайок:
+      </a>
+    </span>
+    <span>
+      last sends
+    </span>
+  {{/if}}
+
+  <hr>
+
+{{#if note}}
+  {{#each note}}
+  <div class="note">
+  {{#each this}}
+      <!-- {{#if this.title}} -->
+
+        {{title}}
+        <p>{{createdAt}}</p>
+        <p>{{sendAt.date}} {{sendAt.time}}</p>
+
+        <form class="" action="/tgNote/delete/{{_id}}" method="post">
+          <input type="hidden" name="tgId" value="{{tgId}}">
+          <input type="hidden" name="id" value="{{_id}}">
+          <input type="submit" name="" value="delete">
+        </form>
+
+      <!-- {{/if}} -->
+    {{/each}}
+  </div>
+  {{/each}}
+
+  {{else}}
+      <p>
+        покищо нагадайок немає.
+        Щоб створити нагадайку потрібно скористатись ботом:
+      </p>
+      <hr>
+      <p>
+        <a href="https://t.me/note_from_future_bot">Відвідати бота</a>
+      </p>
+  {{/if}}
+
+</div>

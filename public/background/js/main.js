@@ -4,7 +4,9 @@ let ball = []
 
 // add balls in canvas
 for (var i = 0; i < sumOfBalls; i++) {
-	ball[i] = newRandomBall()
+	if (newRandomBall()) {
+		ball[i] = newRandomBall()
+	}
 }
 
 function frame() {
@@ -15,14 +17,3 @@ function frame() {
 
 let game = setInterval(frame,1000/fps)
 let play = false
-
-// play_Game.onclick = () => {
-// 	if (!play) {
-// 		play_Game.innerHTML = 'play'
-// 		clearInterval(game)
-// 	} else {
-// 		play_Game.innerHTML = 'pause'
-// 		game = setInterval(frame,1000/fps)
-// 	}
-// 	play = !play
-// }

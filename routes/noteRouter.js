@@ -1,3 +1,4 @@
+const SERVER_CONF = require('../config');
 const express = require('express');
 const router = express.Router();
 const Note = require('../models/Note');
@@ -23,6 +24,8 @@ router.post('/create', async (req, res) => {
     title: 'secreetCode',
     id: note._id,
     isCreate: true,
+    HOST: SERVER_CONF.SERVER.HOST,
+    PORT: SERVER_CONF.SERVER.PORT
   });
 
 });

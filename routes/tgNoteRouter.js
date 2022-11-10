@@ -1,36 +1,38 @@
 const express = require('express');
 const router = express.Router();
-// const Note = require('../models/tgNote');
+const TgNote = require('../models/TgNote');
 
 const tgNoteController = require('../controllers/tgNoteController');
 
-router.get('/create', (req, res) => {
+router.get('/', (req, res) => {
+  if (req.cookies.userID) {
+    res.render('createTgNote', {
+      title: 'new tg note',
+      isCreate: true,
+      id: req.cookies.userID
+    });
+  } else {
+    res.render('tgNote', {
+      title: 'new tg note',
+      isCreate: true,
+    });
+  }
+});
+
+router.get('/create/', (req, res) => {
   res.render('createTgNote', {
     title: 'new tg note',
     isCreate: true,
+    req: req,
+    id: req.cookies.userID
   });
 });
 
-// router.post('/create', async (req, res) => {
-//   const note = new Note({
-//     title: req.body.note,
-//     createdAt: new Date()
-//   });
-//
-//   await note.save();
-//
-//   res.render('secreetCode', {
-//     title: 'secreetCode',
-//     id: note._id,
-//     isCreate: true,
-//   });
-//
-// });
+router.get('/history', tgNoteController.showHistory);
+router.post('/create', tgNoteController.createNote);
 
-router.post('/', async (req, res) => {
-  res.redirect('/tgNote/' + req.body.id);
-});
+router.get('/:chatId', tgNoteController.showTgNote);
 
-router.get('/:id', tgNoteController.showNote);
+router.post('/delete/:id', tgNoteController.deleteNote);
 
 module.exports = router;

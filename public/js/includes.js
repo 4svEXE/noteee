@@ -1,5 +1,5 @@
 // complementary
-addScript('./js/scripts/esey-scroll.js')
+addScript('../js/scripts/esey-scroll.js')
 
 // MAIN
-addScript('./js/main.js')
+addScript('../js/main.js')

@@ -5,7 +5,7 @@ function addBall(){
 		//ctx.fillStyle = b.color;
 		//ctx.fill();
 
-		ballMovement(id)
+		if(b.angle) ballMovement(id)
 	})
 }
 

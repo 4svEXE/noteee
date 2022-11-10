@@ -46,7 +46,6 @@ function ballMovement(i){
         ball[id].angle.y? ball[id].angle.y = false: ball[id].angle.y = true
         b.angle.y? b.angle.y = false: b.angle.y = true
 
-
         a.speed += b.size / 100
         b.speed += a.size / 100
 

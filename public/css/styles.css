@@ -16,7 +16,21 @@
 
 /*fonts*/
 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, acronym, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+
 /*   mini bootstrap   */
+.sv-container{
+	display: flex;
+	justify-content: space-between;
+	height: auto;
+}
 .sv-flex{
 	display: flex;
   justify-content: center;
@@ -32,6 +46,24 @@
 .sv-grid{
 	display: grid;
 }
+.sv-button{
+	padding: 5px;
+	margin: 5px;
+	background-color: #fff;
+	color: #000;
+	font-size: 14px;
+	transition: .3s;
+	border: none;
+	border-bottom: 1px solid #fff;
+	cursor: pointer;
+}
+.sv-button:hover{
+	border-bottom: 1px solid #000;
+}
+.sv-button.active{
+	border-bottom: 1px solid #000;
+	opacity: .8;
+}
 /*   mini bootstrap   */
 
 * {
@@ -44,6 +76,7 @@
 body {
 	margin: 0;
 	font-family: 'JetBrains Mono';
+	overflow: hidden;
 }
 
 .container{
@@ -72,7 +105,7 @@ body {
 .game{
 	width: 100%;height: 70vh;
 	position: absolute;
-	z-index: -1;
+	z-index: -2;
 }
 .a404{
 	font-size: 70px;
@@ -90,6 +123,7 @@ body {
 	text-decoration-color:
 }
 .note{
+	position: relative;
 	max-width: 400px;
 	max-height: 54vh;
 	overflow-y: scroll;
@@ -97,10 +131,28 @@ body {
 	background-color: rgba(255,255,255,0.5);
 	padding: 5px;
 	font-size: 16px;
+	transition: .3s;
+}
+.note .note{
+		max-height: max-content;
 }
 .note span{
 	background-color: #8D84EB;
 	color: white;
+}
+.note .nav{
+	background-color: #fff;
+	z-index: 2;
+	position: sticky;
+	top: 0px;
+	display: flex;
+	justify-content: space-around !important;
+}
+.instruction{
+	margin-bottom: 10px;
+}
+.w100{
+	width: 100%;
 }
 /* /header */
 .header{
@@ -138,6 +190,13 @@ body {
 /* .footer */
 .input-form{
 	border: 1px solid #000;
+	transition: .3s;
+	padding: 0px;
+}
+.input-form.error{
+		border: 3px solid #f00;
+		border-radius: 10px;
+		padding: 5px;
 }
 
 /* Dropdown Button */
@@ -160,7 +219,7 @@ body {
     position: absolute;
     background-color: #fff;
     min-width: 240px;
-    z-index: 1;
+    z-index: 10;
 }
 
 /* Links inside the dropdown */
@@ -170,6 +229,7 @@ body {
 		font-size: 14px;
     text-decoration: none;
     display: block;
+		z-index: 10;
 }
 
 /* Change color of dropdown links on hover */
@@ -180,8 +240,8 @@ body {
 
 @media screen and (max-width: 1440px) {
 	.container{
-		width: 80%;
-		margin-left: 10%;
+		width: 90%;
+		margin-left: 5%;
 		height: 100vh;
 		justify-content: space-between !important
 	}
